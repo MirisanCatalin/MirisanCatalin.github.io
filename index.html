@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalin Mirisan - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --success-color: #3fb950;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); }
+        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .contact-links a { color: var(--accent-color); text-decoration: none; margin: 0 10px; font-weight: 600; }
+        .contact-links a:hover { text-decoration: underline; }
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            transition: background-color 0.2s;
+        }
+        .download-btn:hover { background-color: #79c0ff; }
+        section { padding: 2.5rem 0; border-bottom: 1px solid var(--border-color); }
+        section h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--accent-color); }
+        .experience-item, .project-item { margin-bottom: 1.5rem; }
+        .experience-item h3, .project-item h3 { font-size: 1.2rem; font-weight: 600; }
+        .experience-item .meta, .project-item .meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .experience-item ul, .project-item ul { list-style-position: inside; padding-left: 1rem; }
+        .experience-item li, .project-item li { margin-bottom: 0.3rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+        .skill-category h4 { color: var(--accent-color); margin-bottom: 0.5rem; }
+        .skill-category p { color: var(--text-secondary); font-size: 0.9rem; }
+        footer { text-align: center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.9rem; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Catalin Mirisan</h1>
+            <p>Cybersecurity Student | Homelab Builder | Applied Cryptography & IAM</p>
+            <div class="contact-links">
+                <a href="mailto:catalin.mirisan@stud.ubbcluj.ro">Email</a>
+                <a href="https://github.com/MirisanCatalin" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/catalin-mirisan-617509209/" target="_blank">LinkedIn</a>
+            </div>
+            <!-- Butonul de descărcare a CV-ului -->
+            <a href="CV_Mirisan_Catalin.pdf" class="download-btn" download="CV_Mirisan_Catalin.pdf">CV</a>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a Cybersecurity student at Babeș-Bolyai University, focused on identity, infrastructure security, and applied cryptography. I learn by doing — whether it's breaking things in an isolated lab, hardening a homelab, or writing crypto code for my bachelor's thesis.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Artificial Intelligence Intern</h3>
+                <p class="meta">Globant | Cluj, Romania (Hybrid) | Nov 2025 - Jan 2026</p>
+                <ul>
+                    <li>Worked on Artificial Intelligence projects and gained hands-on experience with Python-based AI development.</li>
+                    <li>Technologies: Python, AI, Machine Learning, Software Development.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Intern - Environment Packaging Data Management</h3>
+                <p class="meta">Tenaris Silcotub | Zalău, Sălaj, Romania (On-site) | Jul - Sep 2026</p>
+                <ul>
+                    <li>Digitalized and centralized all packaging data placed on market by Silcotub for environmental reporting.</li>
+                    <li>Developed unified digital platform to collect, validate, store, trace, and report packaging data efficiently.</li>
+                    <li>Collaborated with Environment Department to improve data accuracy and compliance with regulatory requirements.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <h3>Homelab Media & Security Stack</h3>
+                <p class="meta">Personal Project | Aug 2026 - Present</p>
+                <ul>
+                    <li>Self-hosted media stack on Proxmox with 8 unprivileged LXC containers.</li>
+                    <li>Implemented Zero-Trust remote access via Tailscale with VPN kill switch (Mullvad/WireGuard) enforced via iptables + routing rules.</li>
+                    <li>Automated malware scanning (ClamAV) triggered on every download; IPv6 blocking, firewall rules, automated backups.</li>
+                    <li>Technologies: Proxmox, Linux, Bash, Docker, WireGuard, Tailscale, iptables, Security Automation.</li>
+                    <li><a href="https://github.com/MirisanCatalin/homelab-media-security-stack" target="_blank" style="color: var(--accent-color);">View Repository</a></li>
+                </ul>
+            </div>
+            <div class="project-item">
+                <h3>Secure Deduplicated Sync (Bachelor's Thesis)</h3>
+                <p class="meta">Babeș-Bolyai University | Aug 2026 - Jun 2027</p>
+                <ul>
+                    <li>Designing synchronized storage system with data deduplication combining applied cryptography and distributed sync.</li>
+                    <li>Focus: Convergent encryption, content-defined chunking, HMAC integrity verification, threat modeling.</li>
+                    <li>Status: In progress - repository to be public after thesis defense.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <p>Python, Bash, Go, Rust, Java, C, C++</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Systems & Virtualization</h4>
+                    <p>Linux (Debian, Ubuntu), Proxmox VE, LXC, Docker, systemd</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Security & Cryptography</h4>
+                    <p>WireGuard, Tailscale, iptables, ClamAV, Applied Cryptography, Threat Modeling</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <p>Git, GitHub, Ansible, Bitwarden, Wireshark, Nmap</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <p>SQL, PostgreSQL, MySQL, NoSQL basics</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Catalin Mirisan. Built with GitHub Pages.</p>
+        </footer>
+    </div>
+</body>
+</html>
